@@ -1,2 +1,1 @@
 # ScoreDeployTest
-SpringBoot,Jpa
