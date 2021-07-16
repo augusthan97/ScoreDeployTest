@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>성적처리</title>
+</head>
+<body align="center">
+<h1>애플리케이션 배포 - 성적 처리</h1><hr>
+<div align="center">
+    <div>
+        <form role="form" th:object="${scoreDTO}" th:action="@{/save}"
+              method="post">
+            <div>
+                <label for="num" style="font-weight: bolder;">번호</label>
+                <input type="text" th:field="*{num}" id="num" name="num" required="required">
+            </div>
+            <div>
+                <label for="name" style="font-weight: bolder;">이름</label>
+                <input type="text" th:field="*{name}" id="name" name="name" required="required">
+            </div>
+            <div>
+                <label for="kor" style="font-weight: bolder;">국어</label>
+                <input type="text" th:field="*{kor}" id="kor" name="kor" required="required">
+            </div>
+            <div>
+                <label for="eng" style="font-weight: bolder;">영어</label>
+                <input type="text" th:field="*{eng}" id="eng" name="eng" required="required">
+            </div>
+            <div>
+                <label for="mat" style="font-weight: bolder;">수학</label>
+                <input type="text" th:field="*{mat}" id="mat" name="mat" required="required">
+            </div>
+            <div style="text-align: right;">
+                <input type="submit" value="확인">
+                <input type="reset" value="취소">
+                <button type="button" onclick="location.href='/listdata'" >목록보기</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

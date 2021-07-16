@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>성적처리</title>
+</head>
+<body align="center">
+<h1>애플리케이션 배포 - 성적 처리</h1><hr>
+<table align="center">
+  <thead>
+    <tr>
+      <th>번호</th>
+      <th>이름</th>
+      <th>국어</th>
+      <th>영어</th>
+      <th>수학</th>
+      <th>총점</th>
+      <th>평균</th>
+      <th>학점</th>
+      <th>석차</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="data: ${scorelist}">
+      <td th:text="${data.num}"></td>
+      <td th:text="${data.name}"></td>
+      <td th:text="${data.kor}"></td>
+      <td th:text="${data.eng}"></td>
+      <td th:text="${data.mat}"></td>
+      <td th:text="${data.tot}"></td>
+      <td th:text="${#numbers.formatDecimal(data.avg,2,1)}"></td>
+      <td th:text="${data.hak}"></td>
+      <td th:text="${data.rank}"></td>
+    </tr>
+  </tbody>
+</table>
+  <br><br>
+  <button type="button" onclick="location.href='/'">성적 입력</button>
+</body>
+</html>
